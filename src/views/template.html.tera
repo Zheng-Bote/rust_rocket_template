@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="ZHENG Robert" />
+
+    <title>RR Template</title>
+
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body id="body">
+    <div class="container" id="container">
+      <header>
+        <span class="header_brand">
+          <button type="button" id="brand_button">
+            <img
+              src="/assets/img/contrast-outline.svg"
+              alt="goto main"
+              title="goto main"
+            />
+          </button>
+          <span class="brand_title"><span>brand header</span></span>
+        </span>
+        <span class="header_icons">
+          <button
+            type="button"
+            id="btn_language"
+            alt="toggle language"
+            title="toggle language"
+          >
+            <img
+              src="/assets/img/language-outline.svg"
+              alt="toggel language"
+              title="toogle language"
+            />
+          </button>
+          &nbsp;
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            alt="toogle Mode"
+            title="toogle Mode"
+          >
+            <span class="d-block-light" id="light">
+              <img
+                src="/assets/img/moon-outline.svg"
+                alt="toogle Mode"
+                title="toogle Mode"
+                width="20px"
+                height="auto"
+              />
+            </span>
+            <span class="d-block-dark" id="dark">
+              <img
+                src="/assets/img/sunny-outline.svg"
+                alt="toogle Mode"
+                title="toogle Mode"
+                width="20px"
+                height="auto"
+              />
+            </span>
+          </button>
+          &nbsp;
+          <button type="button" id="btn_login" alt="login" title="login">
+            <img
+              src="/assets/img/log-in-outline.svg"
+              alt="login"
+              title="login"
+            />
+          </button>
+        </span>
+      </header>
+      <div class="content">
+        <h1 data-i18n-key="app-title">Rust Rocket Template</h1>
+        <p class="brief" data-i18n-key="app-brief">
+          Content Template for Rust Rocket
+        </p>
+        <p data-i18n-key="app-desc">
+          Basic pre-configured Rust Webserver with Rocket, CORS, CSRF,
+          Fileserver for Tera-Templates and static assets.
+        </p>
+        {% block body %}{% endblock body %}
+      </div>
+      <footer id="footer">footer</footer>
+    </div>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

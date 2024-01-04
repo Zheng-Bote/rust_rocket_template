@@ -1,0 +1,110 @@
+{% extends "template" %} {% block body %}
+
+<article>
+  <h2 data-i18n-key="main-title">Main article</h2>
+  <p class="brief" data-i18n-key="main-brief">das ist Main</p>
+  <p>
+    Details:
+    <br />
+    <a href="https://www.rust-lang.org/" alt="Rust website" title="Rust website"
+      >Rust Website</a
+    >
+    <br />
+    <a href="https://rocket.rs/" alt="Rocket website" title="Rocket website"
+      >Rocket Website</a
+    >
+    <br />
+    <a
+      href="https://github.com/Zheng-Bote/rust_rocket_template"
+      alt="Github sourcode"
+      title="Github Source Code"
+      >Github source code</a
+    >
+  </p>
+  <section>
+    <h3 data-i18n-key="main-section-title">Main Section</h3>
+    <p class="brief" data-i18n-key="main-section-brief">
+      Section Main Template
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua.
+    </p>
+
+    <div class="text">
+      <h4 data-i18n-key="text_width_limited">Text-width limited to 80ch</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua.
+      </p>
+      <p>the END</p>
+      <br />
+      <h5>Rust Rocket Webserver</h5>
+
+      <ul>
+        <li>Rust</li>
+        <li>Rocket Webserver</li>
+        <li>CORS</li>
+        <li>CSRF (Argon2)</li>
+        <li>Rocket Fileserver with automatic static asset support</li>
+        <li>Rocket dynamic template support (Tera)</li>
+        <li>responsive web design with CSS3 (mobile first)</li>
+        <li>
+          i18n UI frontend support with JSON (Browser auto-detection and
+          switchable)
+        </li>
+        <li>dark-/light-mode switchable</li>
+        <li>remote shutdown (shutdown API)</li>
+        <li>logfiles with typical log-levels</li>
+        <li>configured error-handling (400, 404, 422, 500)</li>
+      </ul>
+
+      <p class="brief">
+        <span data-i18n-key="Author">Author</span>:
+        <a
+          href="https://www.robert.hase-zheng.net/"
+          alt="RZheng website"
+          title="RZheng website"
+          >{{ author }}</a
+        >
+      </p>
+    </div>
+  </section>
+  <section>
+    <h3>Source Code</h3>
+    <p class="brief">source code snippet</p>
+    <code>
+      <pre>
+    #[rocket::async_trait]
+    impl Fairing for CORS {
+    fn info(&self) -> Info {
+        Info {
+            name: "Add CORS headers to responses",
+            kind: Kind::Response,
+        }
+    }
+
+    async fn on_response<'r>(&self, _request: &'r Request<'_>, response: &mut Response<'r>) {
+        response.set_header(Header::new("Access-Control-Allow-Origin", "*"));
+        response.set_header(Header::new(
+            "Access-Control-Allow-Methods",
+            "POST, GET, PATCH, OPTIONS",
+        ));
+        response.set_header(Header::new("Access-Control-Allow-Headers", "*"));
+        response.set_header(Header::new("Access-Control-Allow-Credentials", "true"));
+
+        response.set_header(Header::new("Strict-Transport-Security", "max-age=63072000"));
+    }
+}
+ </pre
+      >
+    </code>
+  </section>
+</article>
+{% endblock body %}
