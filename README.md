@@ -16,7 +16,7 @@ Basic pre-configured Rust Webserver with Rocket, CORS, CSRF, Fileserver for Tera
 **Still under heavy construction**
 
 ![deprecated](https://img.shields.io/badge/Info-limited_functionality-yellow)
-**This application will be just rudimentary and mostly to learn Rust and the Rocket framework.**
+**Still under heavy development**
 
 ## Features
 
