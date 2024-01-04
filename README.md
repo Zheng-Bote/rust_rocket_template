@@ -68,13 +68,21 @@ Basic pre-configured Rust Webserver with Rocket, CORS, CSRF, Fileserver for Tera
 
 **Startpage**
 
+Example with english language (Example comes with EN and DE).
+
+Header area with left hand brand icon and brand title
+
+Header area with right hand navigation icons (toggle Language, toggle mode, login)
+
   <img src="https://raw.githubusercontent.com/Zheng-Bote/rust_rocket_template/main/docs/template_01_en.png"  width="100%" height="auto" />
 
-**create / add provider**
+**Startpage**
+
+Example with german language (Example comes with EN and DE).
 
   <img src="https://raw.githubusercontent.com/Zheng-Bote/rust_rocket_template/main/docs/template_01_de.png"  width="100%" height="auto" />
 
-**list all registered providers**
+**dark mode / light mode**
 
   <img src="https://raw.githubusercontent.com/Zheng-Bote/rust_rocket_template/main/docs/template_03_darkmode.png"  width="100%" height="auto" />
 
