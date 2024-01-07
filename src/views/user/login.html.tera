@@ -1,0 +1,101 @@
+{% extends "template" %} {% block body %}
+
+<style>
+  form {
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+  }
+
+  label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    border-color: rgba(255, 255, 255, 0.1);
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  ::placeholder {
+    color: #e5e5e5;
+  }
+  button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border-color: lightgrey;
+    cursor: pointer;
+  }
+  .social {
+    display: flex;
+  }
+  .social div {
+    background: red;
+    width: 150px;
+    border-radius: 3px;
+    padding: 5px 10px 10px 5px;
+    background-color: rgba(255, 255, 255, 0.27);
+    color: #eaf0fb;
+  }
+  .social div:hover {
+    background-color: rgba(255, 255, 255, 0.47);
+  }
+  .social img {
+    width: 20px;
+    height: auto;
+  }
+  .social Button {
+    width: 33%;
+    font-size: 1rem;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+</style>
+<article>
+  <h2>login-form</h2>
+  <p class="brief">user login</p>
+  <p>Just an example, without any function</p>
+
+  <form action="#">
+    <label for="username">Username</label>
+    <input type="text" placeholder="Username" id="username" name="username" />
+
+    <label for="pwd">Password</label>
+    <input type="password" placeholder="password" id="pwd" name="pwd" />
+
+    <button>Log In</button>
+
+    <div class="social" name="social" id="social">
+      <button><img src="/assets/img/logo-google.svg" />Google</button>
+      <button><img src="/assets/img/logo-linkedin.svg" />Linkedin</button>
+      <button><img src="/assets/img/logo-windows.svg" />Microsoft</button>
+    </div>
+  </form>
+</article>
+{% endblock body %}

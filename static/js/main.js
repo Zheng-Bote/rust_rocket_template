@@ -32,8 +32,8 @@ function setHeader() {
     });
 }
 function setFooter() {
-  const VERSION = "v00.01.00";
-  const CREATED = "2021";
+  const VERSION = "v00.01.01";
+  const CREATED = "2023";
   const DATE = new Date();
   const FULLYEAR = DATE.getFullYear();
   let years = "";

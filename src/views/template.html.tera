@@ -7,74 +7,116 @@
 
     <title>RR Template</title>
 
+    <meta name="description" content="Rust Rocket Template" />
+    <meta name="version" content="v00.01.01" />
+    <meta name="author" content="ZHENG Robert" />
+    <meta name="date" content="2023-12-28T11:49:37+02:00" />
+    <meta name="language" content="EN" />
+    <meta name="lang" content="en" />
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="alternate icon" href="/assets/favicon.ico" />
+    <link rel="mask-icon" href="/assets/favicon.svg" color="#b2b2b2" />
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
 
     <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body id="body">
-    <div class="container" id="container">
-      <header>
-        <span class="header_brand">
-          <button type="button" id="brand_button">
+    <header>
+      <div id="brand">
+        <img
+          src="/assets/img/books_pen.svg"
+          width="70px"
+          height="auto"
+          alt="Main"
+          title="Main"
+          id="brand_button"
+        />
+        <a href="/" alt="Home" title="Home"
+          >Rust Rocket Template - views/main</a
+        >
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="/" alt="Home" title="Home"
+              ><img
+                src="/assets/img/home-outline.svg"
+                width="15px"
+                alt="Main"
+                title="Main"
+            /></a>
+          </li>
+          <!-- <li><a href="./architecture.html" alt="Architecture" title="Architecture"><img src="/assets/img/construct-outline.svg" width="15px" alt="Architecture" title="Architecture"></a></li> -->
+          <li>
+            <a
+              href="/assets/html/sbom.html"
+              alt="SBOM"
+              title="Software Bill of Material"
+              ><img
+                src="/assets/img/list-outline.svg"
+                width="15px"
+                alt="SBOM"
+                title="Software Bill Of Material"
+            /></a>
+          </li>
+          <li>
+            <a href="/assets/html/contact.html" alt="contact" title="contact"
+              ><img
+                src="/assets/img/mail-open-outline.svg"
+                width="15px"
+                alt="Contact"
+                title="Contact"
+            /></a>
+          </li>
+          <li>
             <img
-              src="/assets/img/contrast-outline.svg"
-              alt="goto main"
-              title="goto main"
+                src="/assets/img/language-outline.svg"
+                width="15px"
+                alt="i18n"
+                title="i18n"
+                id="btn_language"
             />
-          </button>
-          <span class="brand_title"><span>brand header</span></span>
-        </span>
-        <span class="header_icons">
-          <button
-            type="button"
-            id="btn_language"
-            alt="toggle language"
-            title="toggle language"
-          >
-            <img
-              src="/assets/img/language-outline.svg"
-              alt="toggel language"
-              title="toogle language"
-            />
-          </button>
-          &nbsp;
-          <button
-            id="theme-toggle"
-            class="theme-toggle"
-            type="button"
-            alt="toogle Mode"
-            title="toogle Mode"
-          >
-            <span class="d-block-light" id="light">
-              <img
-                src="/assets/img/moon-outline.svg"
-                alt="toogle Mode"
-                title="toogle Mode"
-                width="20px"
-                height="auto"
-              />
-            </span>
-            <span class="d-block-dark" id="dark">
-              <img
-                src="/assets/img/sunny-outline.svg"
-                alt="toogle Mode"
-                title="toogle Mode"
-                width="20px"
-                height="auto"
-              />
-            </span>
-          </button>
-          &nbsp;
-          <button type="button" id="btn_login" alt="login" title="login">
-            <img
+          </li>
+          <li>
+
+              <span id="theme-toggle" >
+                <img
+                  src="/assets/img/moon-outline.svg"
+                  alt="toogle light Mode"
+                  title="toogle dark Mode"
+                  width="15px"
+                  height="auto"
+                  id="light"
+                />
+
+                <img
+                  src="/assets/img/sunny-outline.svg"
+                  alt="toogle dark Mode"
+                  title="toogle light Mode"
+                  width="15px"
+                  height="auto"
+                  id="dark"
+                />
+              </span>
+
+          </li>
+          <li>
+          <a href="/user/login" alt="login" title="login"
+            ><img
+              id="login_icon"
               src="/assets/img/log-in-outline.svg"
+              width="15px"
               alt="login"
               title="login"
-            />
-          </button>
-        </span>
-      </header>
+          /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
       <div class="content">
         <h1 data-i18n-key="app-title">Rust Rocket Template</h1>
         <p class="brief" data-i18n-key="app-brief">
@@ -86,8 +128,21 @@
         </p>
         {% block body %}{% endblock body %}
       </div>
-      <footer id="footer">footer</footer>
-    </div>
+
+    </main>
+    <footer
+      class="center"
+      id="footer"
+      onclick="gotoTop()"
+    >
+      &copy; ZHENG Robert 2021-2022
+    </footer>
+
+    <script>
+      function gotoTop() {
+        window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+      }
+    </script>
+
     <script src="/assets/js/main.js"></script>
-  </body>
 </html>

@@ -6,17 +6,13 @@ use argon2::{
     Argon2,
 };
 use rocket::fairing::{self, Fairing, Info, Kind};
-use rocket::http::{Cookie, Status};
-use rocket::request::{FromRequest, Outcome, Request};
+use rocket::http::Cookie;
+use rocket::request::Request;
 use rocket::serde::Serialize;
 use rocket::{Build, Data, Rocket};
 use time::{Duration, OffsetDateTime};
 
-use base64::{
-    alphabet,
-    engine::{self, general_purpose},
-    Engine as _,
-};
+use base64::{engine::general_purpose, Engine as _};
 
 const CSRF_NAME: &str = "csrf_cookie";
 const CSRF_LENGTH: usize = 32;

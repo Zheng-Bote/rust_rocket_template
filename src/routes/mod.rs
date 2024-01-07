@@ -19,3 +19,9 @@ pub async fn shutdown(shutdown: Shutdown) -> &'static str {
     }
     "Not doing anything."
 }
+
+// user
+#[get("/user/login")]
+pub async fn login_form() -> Template {
+    Template::render("user/login", context! {author:"ZHENG Robert"})
+}

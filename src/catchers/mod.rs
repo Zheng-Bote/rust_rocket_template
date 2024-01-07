@@ -9,7 +9,9 @@ const ERROR_HTML_PREFIX: &str = r#"<!DOCTYPE html>
 </head>
 <body>"#;
 
-const ERROR_HTML_SUFFIX: &str = r#"</body>
+const ERROR_HTML_SUFFIX: &str = r#"
+<p><a href="/" alt="back to main" title="back to main">back to main</a></p>
+</body>
 </html>"#;
 
 #[catch(400)]

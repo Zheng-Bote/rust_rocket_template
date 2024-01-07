@@ -1,282 +1,187 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="ZHENG Robert" />
 
+    <title>Rust Rocket</title>
+    <meta name="description" content="Rust Rocket Template" />
+    <meta name="version" content="v00.01.01" />
+    <meta name="author" content="ZHENG Robert" />
+    <meta name="date" content="2023-12-28T11:49:37+02:00" />
+    <meta name="language" content="EN" />
+    <meta name="lang" content="en" />
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="alternate icon" href="/assets/favicon.ico" />
+    <link rel="mask-icon" href="/assets/favicon.svg" color="#b2b2b2" />
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
 
-    <title>Rust</title>
-
-    <style>
-      html {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, Roboto, Ubuntu,
-          "Segeo UI", "Helvetica Neue", Arial, sans-serif;
-        font-size: 16px;
-        color: black;
-      }
-
-      body {
-        padding: 0;
-        margin: 0;
-        background: grey;
-      }
-
-      .dark-mode {
-        background-color: grey;
-        color: white;
-      }
-
-      button {
-        width: 200px;
-      }
-
-      .container {
-        height: 100vh;
-        display: grid;
-        grid-template-rows: 80px 1fr 1fr 1fr 40px;
-        grid-template-columns: 100%;
-        grid-template-areas:
-          "header"
-          "sidebar_left"
-          "content"
-          "sidebar_right"
-          "footer";
-      }
-
-      header {
-        background: tomato;
-        grid-area: header;
-
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      .header_left {
-        /*background-color: grey; */
-        flex: 25%;
-        padding-left: 25px;
-        font-size: clamp(1rem, calc(12px + 1.1vw), 1.3rem);
-        color: hsla(0, 0%, 100%, 0.5);
-        text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
-      }
-      .header_right {
-        flex: 25%;
-        padding-right: 25px;
-        text-align: right;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 0.8rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
-
-      footer {
-        background: lightblue;
-        grid-area: footer;
-
-        display: grid;
-        align-items: center;
-        text-align: center;
-      }
-
-      article {
-        background: gold;
-        grid-area: content;
-        padding: 25px;
-        font-family: "Roboto";
-      }
-
-      section {
-        max-width: 80ch;
-        margin: auto;
-        /* should be screen only */
-        line-height: 1.75;
-      }
-
-      aside.left {
-        background: lightgreen;
-        grid-area: sidebar_left;
-        padding: 5px;
-        font-family: "Inter";
-      }
-      aside.right {
-        background: rgb(117, 207, 13);
-        grid-area: sidebar_right;
-        padding: 5px;
-        font-family: "Arial";
-      }
-
-      @media screen and (min-width: 768px) {
-        .container {
-          grid-template-rows: 80px 1fr 40px;
-          grid-template-columns: 1fr 1fr 200px;
-          grid-template-areas:
-            "header header header"
-            "sidebar_left content sidebar_right"
-            "footer footer footer";
-        }
-      }
-    </style>
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
   </head>
   <body id="body">
-    <script>
-      function showhide() {
-        var x = document.getElementById("aside");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-      }
-    </script>
+    <header>
+      <div id="brand">
+        <img
+          src="/assets/img/books_pen.svg"
+          width="70px"
+          height="auto"
+          alt="Main"
+          title="Main"
+          id="brand_button"
+        />
+        <a href="/" alt="Home" title="Home"
+          >Rust Rocket Template - assets/index</a
+        >
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="/" alt="Main" title="Home"
+              ><img
+                src="/assets/img/home-outline.svg"
+                width="15px"
+                alt="Main"
+                title="Main"
+            /></a>
+          </li>
+          <!-- <li><a href="./architecture.html" alt="Architecture" title="Architecture"><img src="/assets/img/construct-outline.svg" width="15px" alt="Architecture" title="Architecture"></a></li> -->
+          <li>
+            <a
+              href="/assets/html/sbom.html"
+              alt="SBOM"
+              title="Software Bill of Material"
+              ><img
+                src="/assets/img/list-outline.svg"
+                width="15px"
+                alt="SBOM"
+                title="Software Bill Of Material"
+            /></a>
+          </li>
+          <li>
+            <a href="/assets/html/contact.html" alt="contact" title="contact"
+              ><img
+                src="/assets/img/mail-open-outline.svg"
+                width="15px"
+                alt="Contact"
+                title="Contact"
+            /></a>
+          </li>
+          <li>
+            <img
+              src="/assets/img/language-outline.svg"
+              width="15px"
+              alt="i18n"
+              title="i18n"
+              id="btn_language"
+            />
+          </li>
+          <li>
+            <span id="theme-toggle">
+              <img
+                src="/assets/img/moon-outline.svg"
+                alt="toogle light Mode"
+                title="toogle dark Mode"
+                width="15px"
+                height="auto"
+                id="light"
+              />
 
-    <div class="container">
-      <header>
-        <span id="header_left" class="header_left">
-          <h3>header left</h3>
-        </span>
-        <span id="header_right" class="header_right"> header right </span>
-      </header>
-      <article id="article">
-        <h1>article</h1>
-        <p>Roboto</p>
-        <button onclick="showhide()">show hide aside left</button>
-        <button id="oneBtn" type="button" onclick="clickBtn2()">
-          Btn1 hide Btn2
-        </button>
-        <button id="twoBtn" type="button" onclick="darkMode()">
-          Btn2 toggle darkMode
-        </button>
+              <img
+                src="/assets/img/sunny-outline.svg"
+                alt="toogle dark Mode"
+                title="toogle light Mode"
+                width="15px"
+                height="auto"
+                id="dark"
+              />
+            </span>
+          </li>
+          <li>
+            <a href="/user/login" alt="login" title="login"
+              ><img
+                id="login_icon"
+                src="/assets/img/log-in-outline.svg"
+                width="15px"
+                alt="login"
+                title="login"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>assets/index</h2>
+        <p class="brief">This is the article area</p>
+        <p>Static files provided by fileserver.</p>
+        <p>Static files folder structure:
+          <ul>
+            <li>
+              css <small>(/assets/css/main.css)</small>
+            </li>
+            <li>
+              html <small>(/assets/html/legal/index.html)</small>
+            </li>
+            <li>
+              i18n <small>(/assets/i18n/de.json, /assets/i18n/en.json)</small>
+            </li>
+            <li>
+              img <small>(/assets/img/brand-log.png)</small>
+            </li>
+            <li>
+              ls <small>(/assets/js/main.js)</small>
+            </li>
+          </ul>
+        </p>
         <section>
-          <h2>section</h2>
-          <br />
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-          et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-          Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus.
-          <p style="font-family: 'Ubuntu'">
-            <b>Ubuntu</b>
-            iam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et
+          <h3>Examples</h3>
+          <p class="brief">This is the section area</p>
+          <p>some formatting examples</p>
+
+          <p><br /></p>
+          <p>
+            Mailto:
+            <a href="mailto:no.spam@hotmail.org"
+              >Agent Smith, agent.smith@example-mail.org</a
+            >
           </p>
-          <p><br /><b>the END</b></p>
+          <p>
+            external link:
+            <a
+              href="https://github.com/Zheng-Bote/rust_rocket_template"
+              alt="GH"
+              >Github</a
+            >
+          </p>
+          <p><br /></p>
+          <h4>icon-spinner</h4>
+          <p>
+            <img
+              class="p-icon-spin"
+              src="/assets/img/sync-outline.svg"
+              alt="working"
+              width="20px"
+              height="auto"
+            />
+          </p>
+          <p><br /></p>
+          <h4>CSS3</h4>
+          <p>more details can be found in <code>/static/css/main.css</code></p>
         </section>
       </article>
-      <aside id="aside" class="left">
-        <h1>aside left</h1>
-        Inter
-        <p>
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-          et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-          Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo
-          eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet
-          clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata
-          ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-          sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat. Consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-          et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.
-        </p>
-      </aside>
-      <aside id="aside" class="right">
-        <h1>aside right</h1>
-        Arial
-        <p>
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-          et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-          Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo
-          eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet
-          clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata
-          ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-          sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat. Consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-          et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.
-        </p>
-      </aside>
-      <footer>footer</footer>
-    </div>
+    </main>
+
+    <footer class="center" id="footer" onclick="gotoTop()">
+      &copy; ZHENG Robert 2021-2022
+    </footer>
 
     <script>
-      function clickBtn2() {
-        console.log("Btn1 clicked");
-        let x = document.getElementById("twoBtn");
-        if (x.style.visibility === "hidden") {
-          x.style.visibility = "visible";
-        } else {
-          x.style.visibility = "hidden";
-        }
-      }
-
-      function darkMode() {
-        var element = document.body;
-        element.classList.toggle("dark-mode");
-
-        let article = document.getElementById("article");
-        article.classList.toggle("dark-mode");
+      function gotoTop() {
+        window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
       }
     </script>
+
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

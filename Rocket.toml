@@ -3,8 +3,6 @@ log_level = "normal"
 template_dir = "src/views"
 
 [debug]
-
-#[debug.databases.main_connection]
-#url = "postgres://username:password@localhost:port/rocket"
+secret_key = "2Ly8RCP5foqgx9dzCow87N4rjh7TiS/FlkwiYywvPa5BJmYSS1cRZ36+n3Zz8h8BG73s+nXhahm1FIgRvrTVJg=="
 
 [release]

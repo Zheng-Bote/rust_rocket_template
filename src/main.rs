@@ -3,8 +3,7 @@ extern crate rocket;
 
 use log::LevelFilter;
 
-use rocket::fs::relative;
-use rocket::fs::FileServer;
+use rocket::fs::{relative, FileServer};
 use rocket::{Build, Rocket};
 use rocket_dyn_templates::Template;
 
@@ -18,7 +17,10 @@ async fn rocket() -> Rocket<Build> {
     setup_logger();
 
     rocket::build()
-        .mount("/", routes![routes::shutdown, routes::index])
+        .mount(
+            "/",
+            routes![routes::shutdown, routes::index, routes::login_form],
+        )
         .mount("/assets", FileServer::from(relative!("static")))
         .attach(Template::fairing())
         .attach(Csrf::new())
