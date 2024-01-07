@@ -115,7 +115,7 @@ To run this project, you will need to add the following environment variables to
 
 `DATABASE_URL="postgres://username:password@dbhost:port/database"`
 
-For production, you need to configure Rocket secure_key or disable it in your `Rocket.toml``
+For production, you need to configure Rocket secure_key or disable it in your `Rocket.toml`
 
 ### Database
 
