@@ -13,7 +13,6 @@ Basic pre-configured Rust Webserver with Rocket, CORS, CSRF, Fileserver for Tera
 ## Status
 
 ![ops](https://img.shields.io/badge/Status-usable-green)
-**useable**
 
 ![dev](https://img.shields.io/badge/Info-limited_functionality-yellow)
 **Still under development**
@@ -56,8 +55,6 @@ Basic pre-configured Rust Webserver with Rocket, CORS, CSRF, Fileserver for Tera
 > | ------- | ---------- | --------- | --------------------- |
 > | 0.1.0   | 2023-12-16 | RZheng    | created               |
 > | 0.1.1   | 2024-01-07 | RZheng    | added: user/loginform |
-
-    |
 
 ## Authors
 
