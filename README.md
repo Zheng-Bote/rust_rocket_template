@@ -112,6 +112,7 @@ static asset, auto-detection of mime-type
 #### shutdown Rocket webserver
 
 gracefull shutdown the rocket webserver
+
 **not yet secured, accessable for everyone**
 
 ```http
@@ -123,7 +124,7 @@ gracefull shutdown the rocket webserver
 | `none`    | `GET` | system shutdown |
 
 **Returns:**
-string
+<string> Shuting down the application.
 
 ## Setup
 
