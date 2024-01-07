@@ -109,6 +109,22 @@ Fileserver provides static assets
 **Returns:**
 static asset, auto-detection of mime-type
 
+#### shutdown Rocket webserver
+
+gracefull shutdown the rocket webserver
+**not yet secured, accessable for everyone**
+
+```http
+  GET /shutdown
+```
+
+| Parameter | Type  | Description     |
+| :-------- | :---- | :-------------- |
+| `none`    | `GET` | system shutdown |
+
+**Returns:**
+string
+
 ## Setup
 
 ### Environment Variables
@@ -117,7 +133,7 @@ To run this project, you will need to add the following environment variables to
 
 `DATABASE_URL="postgres://username:password@dbhost:port/database"`
 
-For production, you need to configure Rocket secure_key or disable it in your `Rocket.toml`
+For production, you need to configure Rocket secret_key or disable it in your `Rocket.toml`
 
 ### Database
 
