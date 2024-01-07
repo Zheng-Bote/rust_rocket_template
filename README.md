@@ -47,6 +47,8 @@ Basic pre-configured Rust Webserver with Rocket, CORS, CSRF, Fileserver for Tera
 
 - [ ] display current application-log
 
+- [ ] configure CSRF fairing for put/delete/post
+
 - [ ] tbd.
 
 ## HISTORY:
@@ -150,9 +152,9 @@ response.set_header(Header::new("Access-Control-Allow-Credentials", "true"));
 response.set_header(Header::new("Strict-Transport-Security", "max-age=63072000"));
 ```
 
-The CSRF token is build with Argon2
-
 **please be aware of "Strict-Transport-Security"**
+
+The CSRF token is build with Argon2
 
 ## Screenshots
 
