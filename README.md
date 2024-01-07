@@ -12,7 +12,7 @@ Basic pre-configured Rust Webserver with Rocket, CORS, CSRF, Fileserver for Tera
 
 ## Status
 
-![ops](https://img.shields.io/badge/Info-usable-green)
+![ops](https://img.shields.io/badge/Status-usable-green)
 **useable**
 
 ![dev](https://img.shields.io/badge/Info-limited_functionality-yellow)
@@ -114,9 +114,11 @@ static asset, auto-detection of mime-type
 
 ### Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file (see example: env_example)
+To run this project, you will need to add the following environment variables to your `.env` file (see example: env_example)
 
 `DATABASE_URL="postgres://username:password@dbhost:port/database"`
+
+For production, you need to configure Rocket secure_key or disable it in your `Rocket.toml``
 
 ### Database
 
