@@ -2,7 +2,7 @@
 <br />
 <div align="center">
 
-# Rust Webserver with Rocket
+# Rust Web-Applicationserver with Rocket
 
 Self-contained System.
 
